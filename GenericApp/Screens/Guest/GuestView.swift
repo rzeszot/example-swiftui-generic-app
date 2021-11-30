@@ -2,6 +2,7 @@ import SwiftUI
 
 struct GuestView: View {
   let login: () -> Void
+  var content: (Subview, @escaping (Subview?) -> Void) -> AnyView
 
   enum Subview: String, Identifiable {
     case signin
@@ -16,19 +17,6 @@ struct GuestView: View {
 
   @State
   var subview: Subview?
-
-  func content(_ id: Subview) -> some View {
-    switch id {
-    case .signin:
-      return AnyView(SignInView(back: { subview = nil }, login: login, remind: { subview = .request }))
-    case .signup:
-      return AnyView(SignUpView(back: { subview = nil }, register: login))
-    case .request:
-      return AnyView(RequestPasswordResetView(back: { subview = nil }))
-    case .confirm:
-      return AnyView(ConfirmPasswordResetView(back: { subview = nil }, login: login))
-    }
-  }
 
   var body: some View {
     VStack {
@@ -65,6 +53,12 @@ struct GuestView: View {
       Text("GuestView")
     }
     .background(Color.teal)
-    .sheet(item: $subview, content: content)
+    .sheet(item: $subview) { id in
+      content(id, self.change)
+    }
+  }
+
+  func change(_ id: Subview?) {
+    self.subview = id
   }
 }

@@ -15,7 +15,6 @@
 		622D43202755BDC800F5A181 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D43132755BDC800F5A181 /* DetailsView.swift */; };
 		622D43212755BDC800F5A181 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D43142755BDC800F5A181 /* MainView.swift */; };
 		622D43222755BDC800F5A181 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D43152755BDC800F5A181 /* FeedView.swift */; };
-		622D43232755BDC800F5A181 /* AuthorizedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D43162755BDC800F5A181 /* AuthorizedView.swift */; };
 		622D43242755BDC800F5A181 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D43172755BDC800F5A181 /* RootView.swift */; };
 		622D43252755BDC800F5A181 /* ConfirmPasswordResetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D43192755BDC800F5A181 /* ConfirmPasswordResetView.swift */; };
 		622D43262755BDC800F5A181 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 622D431A2755BDC800F5A181 /* SignInView.swift */; };
@@ -34,7 +33,6 @@
 		622D43132755BDC800F5A181 /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 		622D43142755BDC800F5A181 /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		622D43152755BDC800F5A181 /* FeedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
-		622D43162755BDC800F5A181 /* AuthorizedView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizedView.swift; sourceTree = "<group>"; };
 		622D43172755BDC800F5A181 /* RootView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		622D43192755BDC800F5A181 /* ConfirmPasswordResetView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordResetView.swift; sourceTree = "<group>"; };
 		622D431A2755BDC800F5A181 /* SignInView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
@@ -92,30 +90,28 @@
 		622D430E2755BDC800F5A181 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				622D43182755BDC800F5A181 /* Guest */,
-				622D430F2755BDC800F5A181 /* Authorized */,
-				622D43162755BDC800F5A181 /* AuthorizedView.swift */,
-				622D431D2755BDC800F5A181 /* GuestView.swift */,
 				622D43172755BDC800F5A181 /* RootView.swift */,
+				622D43182755BDC800F5A181 /* Guest */,
+				622D430F2755BDC800F5A181 /* Main */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
 		};
-		622D430F2755BDC800F5A181 /* Authorized */ = {
+		622D430F2755BDC800F5A181 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				622D43122755BDC800F5A181 /* Feed */,
-				622D43102755BDC800F5A181 /* DashboardView.swift */,
-				622D43112755BDC800F5A181 /* ProfileView.swift */,
 				622D43142755BDC800F5A181 /* MainView.swift */,
-				622D43152755BDC800F5A181 /* FeedView.swift */,
+				622D43102755BDC800F5A181 /* DashboardView.swift */,
+				622D43122755BDC800F5A181 /* Feed */,
+				622D43112755BDC800F5A181 /* ProfileView.swift */,
 			);
-			path = Authorized;
+			path = Main;
 			sourceTree = "<group>";
 		};
 		622D43122755BDC800F5A181 /* Feed */ = {
 			isa = PBXGroup;
 			children = (
+				622D43152755BDC800F5A181 /* FeedView.swift */,
 				622D43132755BDC800F5A181 /* DetailsView.swift */,
 			);
 			path = Feed;
@@ -124,6 +120,7 @@
 		622D43182755BDC800F5A181 /* Guest */ = {
 			isa = PBXGroup;
 			children = (
+				622D431D2755BDC800F5A181 /* GuestView.swift */,
 				622D43192755BDC800F5A181 /* ConfirmPasswordResetView.swift */,
 				622D431C2755BDC800F5A181 /* RequestPasswordResetView.swift */,
 				622D431A2755BDC800F5A181 /* SignInView.swift */,
@@ -204,7 +201,6 @@
 			files = (
 				622D43242755BDC800F5A181 /* RootView.swift in Sources */,
 				622D42F62755BD2300F5A181 /* TheApp.swift in Sources */,
-				622D43232755BDC800F5A181 /* AuthorizedView.swift in Sources */,
 				622D43202755BDC800F5A181 /* DetailsView.swift in Sources */,
 				622D43262755BDC800F5A181 /* SignInView.swift in Sources */,
 				622D43272755BDC800F5A181 /* SignUpView.swift in Sources */,

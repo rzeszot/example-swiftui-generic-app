@@ -2,20 +2,31 @@ import SwiftUI
 
 struct MainView: View {
   let logout: () -> Void
+  let build: (Subview) -> AnyView
+
+  enum Subview: String, Identifiable {
+    case dashboard
+    case feed
+    case profile
+
+    var id: String {
+      rawValue
+    }
+  }
 
   var body: some View {
     TabView {
-      DashboardView()
+      build(.dashboard)
         .tabItem {
           Image(systemName: "house")
           Text("Dashboard")
         }
-      FeedView()
+      build(.feed)
         .tabItem {
           Image(systemName: "rectangle.grid.1x2")
           Text("Feed")
         }
-      ProfileView(logout: logout)
+      build(.profile)
         .tabItem {
           Image(systemName: "person")
           Text("Profile")
@@ -24,3 +35,4 @@ struct MainView: View {
     .background(.mint)
   }
 }
+

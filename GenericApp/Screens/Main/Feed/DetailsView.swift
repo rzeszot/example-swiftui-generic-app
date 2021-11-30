@@ -1,12 +1,12 @@
 import SwiftUI
 
 struct DetailsView: View {
-  let ocean: FeedView.Ocean
+  let item: FeedItem
 
   var body: some View {
     VStack {
       Spacer()
-      Text(ocean.name)
+      Text(item.name)
       Spacer()
       Divider()
     }

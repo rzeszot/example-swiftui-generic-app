@@ -3,28 +3,21 @@ import SwiftUI
 struct RootView: View {
   enum Subview: String, Identifiable {
     case guest
-    case authorized
+    case main
 
     var id: String {
       rawValue
     }
   }
 
-  @State
-  var subview: Subview?
+  let content: (Subview, @escaping (Subview) -> Void) -> AnyView
 
-  func content(_ id: Subview) -> some View {
-    switch id {
-    case .authorized:
-      return AnyView(AuthorizedView(logout: { subview = .guest }))
-    case .guest:
-      return AnyView(GuestView(login: { subview = .authorized }))
-    }
-  }
+  @State
+  var subview: Subview? = nil
 
   var body: some View {
     if let subview = subview {
-      content(subview)
+      content(subview, change)
     } else {
       VStack {
 
@@ -35,8 +28,8 @@ struct RootView: View {
           Button(action: { subview = .guest }) {
             Text("Guest").padding(5)
           }
-          Button(action: { subview = .authorized }) {
-            Text("Authorized").padding(5)
+          Button(action: { subview = .main }) {
+            Text("Main").padding(5)
           }
         }
         .buttonStyle(.borderedProminent)
@@ -45,5 +38,9 @@ struct RootView: View {
         Text("RootView")
       }
     }
+  }
+
+  func change(_ id: Subview) {
+    subview = id
   }
 }
